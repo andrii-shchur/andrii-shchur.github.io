@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Pharmacy</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles/style.css">
+    </head>
+    <body>
+        <!-- header -->
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li class="logo"><a href="home.html">Pharmacy</a></li>
+                    <li class="nav-link"><a href="#register-hidden">Sign up</a></li>
+                    <li class="nav-link"><a href="#login-hidden">Sign in</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- login dialog -->
+        <div id="login-hidden" class="dialog">
+            <a class="close" href="#">&times;</a>
+            <form action="/html/home.html">
+                <div class="input-row">
+                    <input class="field" type="text" placeholder="Username" name="username" required>
+                </div>
+    
+                <div class="input-row">
+                    <input class="field" type="password" placeholder="Password" name="password" required>
+                </div>
+                    
+                <div class="input-row">
+                    <label><input class="checkbox" type="checkbox" name="rememberme">Remember me</label>
+                </div>
+    
+                <div class="input-row">
+                    <input class="button" type="submit" value="Login">
+                </div>
+            </form>
+        </div>
+        <!-- register dialog -->
+        <div id="register-hidden" class="dialog">
+            <a class="close" href="#">&times;</a>
+            <form action="/html/home.html">
+                <div class="input-row">
+                    <input class="field" type="text" placeholder="Username" name="username" required>
+                </div>
+    
+                <div class="input-row">
+                    <input class="field" type="password" placeholder="Password" name="password" required>
+                </div>
+    
+                <div class="input-row">
+                    <input class="field" type="password" placeholder="Confirm password" name="cpassword" required>
+                </div>
+    
+                <div class="input-row">
+                    <label for="role">Role: </label>
+                    <select id="role" name="role">
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                    
+                <div class="input-row">
+                    <label><input class="checkbox" type="checkbox" name="rememberme">Remember me</label>
+                </div>
+                
+                <div class="input-row">
+                    <input class="button" type="submit" value="Register">
+                </div>
+            </form>
+        </div>
+        <!-- content block -->
+        <div class="content">
+            <img class="c-section image" src="/img/pills.png" alt="Pills image">
+            <div class="c-section description">
+                <span class="desc-1">We’re one of the most experienced providers of clinical homecare, and we’ve been supporting patients in this way since 1975.</span>
+                <br><br><br><br>
+                <span class="desc-2">We provide care to more than 100,000 patients in the comfort of their home, at work, or in the community – ranging from straightforward delivery of medication to specialist nursing for complex conditions. We’re passionate about what we do and the difference we make to our patients’ lives. It’s this dedication that ensures we constantly deliver outstanding levels of care to our patients.</span>
+            </div>
+        </div>
+    </body>
+</html>
