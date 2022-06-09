@@ -11,25 +11,6 @@ function createRequest(endpoint, method, params, requiresAuth) {
     return request;
 }
 
-function showNotification(message, timeout = 10000) {
-    const notification = document.createElement('div');
-    const text = document.createTextNode(message);
-
-    const timer = setTimeout(() => {
-        document.body.removeChild(notification);
-    }, timeout);
-
-    notification.classList.add('head-notification');
-
-    notification.onclick = (e) => {
-        clearTimeout(timer);
-        document.body.removeChild(e.target);
-    };
-
-    notification.appendChild(text);
-    document.body.appendChild(notification);
-}
-
 function logout() {
     localStorage.removeItem('api_key');
     localStorage.removeItem('user_id');
