@@ -1,4 +1,4 @@
-function createRequest(endpoint, method, params, requiresAuth) {
+export function createRequest(endpoint, method, params, requiresAuth) {
     const url = `http://127.0.0.1:5000/${endpoint}`;
     const request = new XMLHttpRequest();
     request.open(method, url);
@@ -11,8 +11,7 @@ function createRequest(endpoint, method, params, requiresAuth) {
     return request;
 }
 
-function logout() {
+export function logout() {
     localStorage.removeItem('api_key');
     localStorage.removeItem('user_id');
-    window.location = 'index.html';
 }
