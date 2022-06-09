@@ -6,7 +6,7 @@ window.onload = () => {
         const formData = new FormData(event.target);
         const formValues = Object.fromEntries(formData.entries());
         if (formValues.password !== formValues.cpassword) {
-            showNotification('passwords should match');
+            alert('passwords should match');
             return;
         }
         delete formValues.cpassword;
@@ -17,7 +17,7 @@ window.onload = () => {
         request.onload = () => {
             let response;
             if (request.status !== 200) {
-                showNotification(request.responseText);
+                alert(request.responseText);
             } else {
                 response = JSON.parse(request.response);
                 localStorage.setItem('api_key', auth);
@@ -31,7 +31,7 @@ window.onload = () => {
         };
 
         request.onerror = () => {
-            showNotification('No internet connection.');
+            alert('No internet connection.');
         };
     });
 
@@ -46,7 +46,7 @@ window.onload = () => {
         request.onload = () => {
             let response;
             if (request.status !== 200) {
-                showNotification(request.responseText);
+                alert(request.responseText);
             } else {
                 response = JSON.parse(request.response);
                 localStorage.setItem('api_key', auth);
@@ -60,7 +60,7 @@ window.onload = () => {
         };
 
         request.onerror = () => {
-            showNotification('No internet connection.');
+            alert('No internet connection.');
         };
     });
 };

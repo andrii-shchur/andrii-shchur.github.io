@@ -8,7 +8,7 @@ window.onload = () => {
         logout();
 
         request.onerror = () => {
-            showNotification('No internet connection.');
+            alert('No internet connection.');
         };
     });
 
@@ -23,14 +23,14 @@ window.onload = () => {
 
         request.onload = () => {
             if (request.status !== 200) {
-                showNotification(request.responseText);
+                alert(request.responseText);
             } else {
                 logout();
             }
         };
 
         request.onerror = () => {
-            showNotification('No internet connection.');
+            alert('No internet connection.');
         };
     });
 
@@ -45,14 +45,14 @@ window.onload = () => {
 
         request.onload = () => {
             if (request.status !== 200) {
-                showNotification(request.responseText);
+                alert(request.responseText);
             } else {
                 logout();
             }
         };
 
         request.onerror = () => {
-            showNotification('No internet connection.');
+            alert('No internet connection.');
         };
     });
 };
