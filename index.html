@@ -6,6 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/styles/style.css">
+        <script src="js/common.js"></script>
+        <script src="js/auth.js"></script>
     </head>
     <body>
         <!-- header -->
@@ -21,7 +23,7 @@
         <!-- login dialog -->
         <div id="login-hidden" class="dialog">
             <a class="close" href="#">&times;</a>
-            <form action="/html/home.html">
+            <form id="login-form" action="">
                 <div class="input-row">
                     <input class="field" type="text" placeholder="Username" name="username" required>
                 </div>
@@ -31,10 +33,6 @@
                 </div>
                     
                 <div class="input-row">
-                    <label><input class="checkbox" type="checkbox" name="rememberme">Remember me</label>
-                </div>
-    
-                <div class="input-row">
                     <input class="button" type="submit" value="Login">
                 </div>
             </form>
@@ -42,9 +40,21 @@
         <!-- register dialog -->
         <div id="register-hidden" class="dialog">
             <a class="close" href="#">&times;</a>
-            <form action="/html/home.html">
+            <form id="register-form" action="">
+                <div class="input-row">
+                    <input class="field" type="text" placeholder="Phone" name="phone" required>
+                </div>
+
                 <div class="input-row">
                     <input class="field" type="text" placeholder="Username" name="username" required>
+                </div>
+
+                <div class="input-row">
+                    <input class="field" type="text" placeholder="First name" name="fname" required>
+                </div>
+
+                <div class="input-row">
+                    <input class="field" type="text" placeholder="Last name" name="lname" required>
                 </div>
     
                 <div class="input-row">
@@ -57,14 +67,10 @@
     
                 <div class="input-row">
                     <label for="role">Role: </label>
-                    <select id="role" name="role">
+                    <select id="role" name="atype">
                         <option value="user">User</option>
                         <option value="admin">Admin</option>
                     </select>
-                </div>
-                    
-                <div class="input-row">
-                    <label><input class="checkbox" type="checkbox" name="rememberme">Remember me</label>
                 </div>
                 
                 <div class="input-row">

@@ -1,0 +1,25 @@
+{
+    "name": "andrii-shchur.github.io",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint **/*.js --ignore-pattern node_modules/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/andrii-shchur/andrii-shchur.github.io.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/andrii-shchur/andrii-shchur.github.io/issues"
+    },
+    "homepage": "https://github.com/andrii-shchur/andrii-shchur.github.io#readme",
+    "devDependencies": {
+        "eslint": "^6.8.0",
+        "eslint-config-airbnb-base": "^14.0.0",
+        "eslint-plugin-import": "^2.20.1"
+    }
+}
