@@ -167,8 +167,12 @@ select {
   font-size: 1.2em;
 }
 
+.drug-amount-demand {
+  margin-top: 2vh;
+}
+
 .buy-demand {
-  margin-top: 3vh;
+  margin-top: 2.5vh;
 }
 
 .buy-demand .button {

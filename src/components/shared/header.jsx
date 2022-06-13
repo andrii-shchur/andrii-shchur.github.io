@@ -8,7 +8,7 @@ class Header extends Component {
                 <header>
                     <nav className="navbar">
                         <ul>
-                            <li className="logo"><a href="/">Pharmacy</a></li>
+                            <li className="logo"><a href={localStorage.getItem('api_key') ? '/home' : '/'}>Pharmacy</a></li>
                             {header.map((element, i) => {
                                 return (<li key={i} className="nav-link"><a href={element.link}>{element.label}</a></li>)}
                             )}
