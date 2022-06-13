@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from "./shared/header";
 import Form from "./shared/form";
-import {createRequest, logout} from "./shared/utils";
+import {createRequest} from "./shared/utils";
 import {Navigate} from "react-router-dom";
 
 

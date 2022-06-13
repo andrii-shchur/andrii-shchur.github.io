@@ -4,16 +4,55 @@ import {createRequest} from "./shared/utils";
 
 class Home extends Component {
     loadDrugs = () => {
-        const request = createRequest('getAllDrugs', 'GET', '', false);
+        const request = createRequest('getAllDrugs', 'GET', '', true);
         request.onload = () => {
             let response;
             if (request.status !== 200) {
                 alert(request.responseText);
             } else {
                 response = JSON.parse(request.response);
+                for (let element of response) {
+                    element.buy = element.amount > 0;
+                }
                 // eslint-disable-next-line react/no-direct-mutation-state
                 this.setState({drugs: response});
             }
+        };
+
+        request.onerror = () => {
+            alert('No connection.');
+        };
+    }
+
+    onBuy = (event) => {
+        event.preventDefault();
+
+        const params = {
+            drug_id: event.target.id,
+        };
+
+        const request = createRequest('buyDrug', 'POST', JSON.stringify(params), true);
+
+        request.onload = () => {
+            alert(request.responseText);
+        };
+
+        request.onerror = () => {
+            alert('No connection.');
+        };
+    }
+
+    onDemand = (event) => {
+        event.preventDefault();
+
+        const params = {
+            drug_id: event.target.id,
+        };
+
+        const request = createRequest('demandDrug', 'POST', JSON.stringify(params), true);
+
+        request.onload = () => {
+            alert(request.responseText);
         };
 
         request.onerror = () => {
@@ -40,6 +79,7 @@ class Home extends Component {
         }
         const {header} = this.state;
         let drugs = this.state.drugs;
+        console.log(drugs);
         return (
             <React.Fragment>
                 <Header header={header}></Header>
@@ -52,9 +92,10 @@ class Home extends Component {
                             <div className="drug-name">{element.name}</div>
                             <div className="drug-description">{element.description}.</div>
                             <div className="drug-price">${element.price}</div>
+                            <div className="drug-amount-demand">Amount: {element.amount} Demand: {element.dm}</div>
                             <div className="buy-demand">
-                                <input className="button" type="submit" value="Buy"></input>
-                                <input className="button" type="submit" value="Demand"></input>
+                                <input className="button" type="submit" id={element.id} value="Buy" onClick={this.onBuy} disabled={!element.buy}></input>
+                                <input className="button" type="submit" id={element.id} value="Demand" onClick={this.onDemand} disabled={element.buy}></input>
                             </div>
                         </div>
                         )}
