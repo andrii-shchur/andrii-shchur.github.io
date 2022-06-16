@@ -193,6 +193,29 @@ select {
   background-color: #a90300;
 }
 
+.chat-title {
+  margin-bottom: 2vh;
+}
+
+.message {
+  background: #faeac7;
+  margin-bottom: 1vh;
+  height: 5vh;
+  align-items: center;
+  padding: 3vh;
+  font-size: 1.5em;
+}
+
+.chat-textarea {
+  resize: none;
+  margin-top: 2vh;
+  width: inherit;
+}
+
+.send-message {
+  margin-top: 2vh;
+}
+
 @media screen and (max-width: 1080px) {
   .content {
     margin: 3vh 1vh 0 1vh;

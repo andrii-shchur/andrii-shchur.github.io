@@ -13,6 +13,7 @@ class Home extends Component {
                 response = JSON.parse(request.response);
                 for (let element of response) {
                     element.buy = element.amount > 0;
+                    element.price = element.price.slice(0, -1);
                 }
                 // eslint-disable-next-line react/no-direct-mutation-state
                 this.setState({drugs: response});
@@ -79,7 +80,6 @@ class Home extends Component {
         }
         const {header} = this.state;
         let drugs = this.state.drugs;
-        console.log(drugs);
         return (
             <React.Fragment>
                 <Header header={header}></Header>
