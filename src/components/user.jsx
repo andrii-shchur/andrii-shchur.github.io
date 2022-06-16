@@ -54,6 +54,7 @@ class User extends Component {
     state = {
         header: [
             {label: 'Logout', link: '/logout'},
+            {label: 'Chat', link: '/chat'},
         ],
         updateForm : {
             formId: 'register-form',

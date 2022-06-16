@@ -28,6 +28,7 @@ class Auth extends Component {
                 response = JSON.parse(request.response);
                 localStorage.setItem('api_key', auth);
                 localStorage.setItem('user_id', response.user_id);
+                localStorage.setItem('username', response.username);
                 if (response.atype === 'admin') {
                     window.location = 'adminpage';
                 } else {
@@ -57,6 +58,7 @@ class Auth extends Component {
                 response = JSON.parse(request.response);
                 localStorage.setItem('api_key', auth);
                 localStorage.setItem('user_id', response.user_id);
+                localStorage.setItem('username', response.username);
                 if (response.atype === 'admin') {
                     this.setState({redirect: 'adminpage'});
                 } else {

@@ -6,6 +6,7 @@ import Admin from "./components/admin";
 import User from "./components/user";
 import Home from "./components/home";
 import Logout from "./components/logout";
+import Chat from "./components/chat";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/adminpage' element={ <Admin /> } />
         <Route path='/userpage' element={ <User /> } />
         <Route path='/home' element={ <Home /> } />
+        <Route path='/chat' element={ <Chat /> } />
         <Route path='/logout' element={ <Logout /> } />
       </Routes>
   );
