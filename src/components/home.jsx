@@ -64,6 +64,7 @@ class Home extends Component {
     state = {
         header: [
             {label: 'Profile', link: '/userpage'},
+            {label: 'Chat', link: '/chat'},
         ],
         drugs: [],
     };

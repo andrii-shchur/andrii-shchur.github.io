@@ -6,10 +6,9 @@ import io from "socket.io-client";
 
 
 class Chat extends Component {
-
     componentDidMount = () => {
-        // socket.emit('auth', localStorage.getItem('api_key'));
         this.socket = io.connect('ws://127.0.0.1:5000');
+        this.messageArea = document.getElementById('chat-textarea');
 
         this.socket.on ('message', (msg) => {
             let temp = this.state.messages;
@@ -21,7 +20,7 @@ class Chat extends Component {
     }
 
     sendMessage = (msg) => {
-        if (msg !== "") {
+        if (msg.text !== "") {
             this.socket.send(msg);
         } else {
             alert("Message cannot be empty!");
@@ -53,12 +52,12 @@ class Chat extends Component {
                         <div className="chat-body">
                             { this.state.messages.map((message, i) => {
                                 return (
-                                    <div key={i} className="message">{message}</div>
+                                    <div key={i} className="message">{message.username}: {message.text}</div>
                                 )
                             })}
                         </div>
-                        <textarea id="chat-textarea" placeholder="Your message" value={ this.state.message } onInput={(e) => this.setState({message: e.target.value})} />
-                        <input onClick={() => {this.sendMessage(this.state.message)}} className="button send-message" type="submit" value="Send"></input>
+                        <textarea id="chat-textarea" placeholder="Your message"  />
+                        <input onClick={() => {this.sendMessage({'username': localStorage.getItem('username'), 'text': this.messageArea.value})}} className="button send-message" type="submit" value="Send"></input>
                     </div>
                 </div>
             </React.Fragment>

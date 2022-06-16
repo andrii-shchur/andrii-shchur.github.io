@@ -69,6 +69,7 @@ class Admin extends Component {
     state = {
         header: [
             {label: 'Logout', link: '/logout'},
+            {label: 'Chat', link: '/chat'},
         ],
         addForm: {
             formId: 'add-admin-form',

@@ -203,13 +203,14 @@ select {
   height: 5vh;
   align-items: center;
   padding: 3vh;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
-.chat-textarea {
+#chat-textarea {
   resize: none;
   margin-top: 2vh;
   width: inherit;
+  height: 12vh;
 }
 
 .send-message {
